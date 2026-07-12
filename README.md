@@ -36,7 +36,7 @@ Copy the JSON configurations below and add them directly to your environment con
       "command": "npx",
       "args": [
         "-y",
-        "@mysten/memwal-mcp"
+        "@mysten-incubation/memwal-mcp"
       ],
       "env": {
         "ENV": "prod",
@@ -46,12 +46,9 @@ Copy the JSON configurations below and add them directly to your environment con
     "coingecko": {
       "command": "npx",
       "args": [
-        "-y",
-        "@coingecko/mcp-server"
-      ],
-      "env": {
-        "COINGECKO_API_KEY": "YOUR_COINGECKO_API_KEY"
-      }
+        "mcp-remote",
+        "https://mcp.api.coingecko.com/mcp"
+      ]
     }
   }
 }
