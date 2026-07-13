@@ -11,32 +11,37 @@ Current AI trading assistants suffer from short-term amnesia, unreliable data so
 
 *   **Persistent Context Across Sessions & Models:** Standard LLM interactions forget everything once a chat session ends or when you switch models/platforms. By utilizing Walrus MemWal MCP, this agent maintains a permanent, sovereign memory layer. Your risk profile, past portfolio adjustments, and trading preferences persist seamlessly across separate conversations, different AI platforms, or model upgrades.
 *   **Guaranteed Real-Time, Non-Manipulated Data:** Making high-stakes trading decisions based on static or outdated data is a recipe for liquidation. Integrated directly with the Coingecko MCP tool, the agent bypasses the risk of stale or "fake" pricing by fetching live, high-fidelity market data straight from the source.
-*   **Highly Flexible, AI-Driven Tailored Analysis:** Rigid algorithmic platforms lock users into fixed metrics. Leveraging advanced AI reasoning, this agent adapts dynamically to complex natural language requests, performing bespoke technical and risk analysis on-demand based on your unique criteria.
-*   **Intuitive & High-Clarity Visual Presentation:** Raw financial metrics can be overwhelming and difficult to skim. The agent explicitly formats heavy data into beautifully structured inline Markdown tables, clear procedural lists, and contextual highlights inside your chat canvas, turning dense metrics into actionable visual intelligence instantly.
+*   **Highly Flexible, AI-Driven Tailored Analysis:** Rigid algorithmic platforms lock users into fixed metrics. Leveraging advanced AI reasoning, this agent adapts dynamically to complex natural language requests, performing bespoke technical (RSI, MACD, EMA) and risk analysis on-demand based on your unique criteria.
+*   **Intuitive & High-Clarity Visual Presentation:** Raw financial metrics can be overwhelming and difficult to skim. The agent explicitly formats heavy data into beautifully structured inline Markdown tables, clear procedural lists, and contextual highlights inside your chat canvas, utilizing sharp color-coding (🟩 for Bullish, 🟥 for Bearish) to turn dense metrics into actionable visual intelligence instantly.
 
 ## Key Features
 * **Persistent long-term memory** via Walrus MemWal MCP
 * **Real-time price data** from Coingecko MCP
-* **Technical analysis** and risk management
-* **Beautiful, professional response formatting**
+* **Deep Onchain Analytics** via custom Antigravity V2 integration
+* **Advanced Technical Indicators** (Minimum 3: RSI, MACD, EMA Cross) calculated on-demand
+* **High-Contrast Interface Color Psychology** (🟩 Bullish / 🟥 Bearish indicators with precise trend arrows)
 * **Full ReAct reasoning** with transparent tool usage
 * **Works directly** in Claude Desktop and Cursor
 
 ## Requirements
 * Claude Desktop or Cursor with MCP support enabled
-* Walrus MemWal MCP integration (using the official Walrus configuration)
+* Walrus MemWal MCP account and integration tokens
 * Coingecko MCP tool for real-time market data
 * Internet connection
 
 ## Installation & Setup (Step-by-Step)
 
-### Step 1: Configure MCP from Walrus Documentation
-Instead of hosting your own server, integrate the agent directly using the official Walrus MCP configurations. Follow the setup instructions provided in the Walrus documentation to plug the MemWal MCP directly into your local environment using the public or managed endpoints.
+### Step 1: Register on Walrus Memory
+Before setting up the agent, you must obtain your access credentials from the official protocol platform.
+1. Navigate to the official [Walrus Memory](https://docs.walrus.site) registration portal.
+2. Sign up, create your developer account, and provision your dedicated memory namespace keys.
 
-### Step 2: Configure AI Environment
-Copy the JSON configurations below and add them directly to your environment config file (`claude_desktop_config.json` for Claude Desktop, or via the UI settings under `MCP Servers` in Cursor).
+### Step 2: Configure AI Environment & External Services
+To deploy the required MCP endpoints, select from the integration options below based on your development workflow:
 
-#### For Claude Desktop (`claude_desktop_config.json`):
+#### Option A: Claude Desktop Config (`claude_desktop_config.json`)
+Open your system's global Claude configuration file and inject the following standard marketplace server endpoints:
+
 ```json
 {
   "mcpServers": {
@@ -62,7 +67,16 @@ Copy the JSON configurations below and add them directly to your environment con
 }
 ```
 
-*Note: For **Cursor**, add each server manually under `Settings` → `Tools & Integrations` → `MCP Servers` using `npx` as the command, and passing the respective values from the `args` and `env` blocks above.*
+#### Option B: Cursor IDE Configuration
+1. Open Cursor and navigate to `Settings` → `Tools & Integrations` → `MCP Servers`.
+2. Click **+ Add New MCP Server**.
+3. Copy & paste in the JSON config above.
+
+#### Option C: Antigravity V2 Manual Integration (.config Folder Setup)
+Because Antigravity V2 is a standalone custom solution not available on public package marketplaces, you must package it manually inside your workspace root:
+1. In your project's root directory, create a new folder named `.config`.
+2. Inside the `.config` folder, create a configuration file named `mcp_config.json`.
+3. Copy & paste in the JSON config above.
 
 ### Step 3: Load System Prompt
 1. Copy the content from [PROMPT.md](https://github.com/puchi-ai/watrade/blob/main/PROMPT.md)
