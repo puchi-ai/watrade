@@ -79,7 +79,7 @@ Because Antigravity V2 is a standalone custom solution not available on public p
 3. Copy & paste in the JSON config above.
 
 ### Step 3: Load System Prompt
-1. Copy the content from [PROMPT.md](https://github.com/puchi-ai/watrade/blob/main/PROMPT.md)
+1. Copy the content from [PROMPT.md](https://github.com/puchi-ai/walfa/blob/main/PROMPT.md)
 2. Paste it as System Prompt / Custom Instructions in your project
 3. Start a new conversation
 
