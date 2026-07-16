@@ -16,11 +16,11 @@ Current AI trading assistants suffer from short-term amnesia, unreliable data so
 
 ## Key Features
 * **Persistent long-term memory** via Walrus MemWal MCP
-* **Deep Onchain Analytics** via custom Antigravity V2 integration
+* **Deep Onchain Analytics** via prompt
 * **Advanced Technical Indicators** (Minimum 3: RSI, MACD, EMA Cross) calculated on-demand
 * **High-Contrast Interface Color Psychology** (🟩 Bullish / 🟥 Bearish indicators with precise trend arrows)
 * **Full ReAct reasoning** with transparent tool usage
-* **Works directly** in Claude Desktop and Cursor
+* **Works directly** in Claude Desktop, Cursor, Antigravity v2 (Code), DeepSeek terminal
 
 ## Requirements
 * Claude Desktop or Cursor with MCP support enabled
