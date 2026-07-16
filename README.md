@@ -10,13 +10,12 @@ Designed specifically for the Walrus Memory Prompt Jam, this agent demonstrates 
 Current AI trading assistants suffer from short-term amnesia, unreliable data sources, and rigid user experiences. Walrus Finance Agent addresses these critical pain points through a production-grade architecture:
 
 *   **Persistent Context Across Sessions & Models:** Standard LLM interactions forget everything once a chat session ends or when you switch models/platforms. By utilizing Walrus MemWal MCP, this agent maintains a permanent, sovereign memory layer. Your risk profile, past portfolio adjustments, and trading preferences persist seamlessly across separate conversations, different AI platforms, or model upgrades.
-*   **Guaranteed Real-Time, Non-Manipulated Data:** Making high-stakes trading decisions based on static or outdated data is a recipe for liquidation. Integrated directly with the Coingecko MCP tool, the agent bypasses the risk of stale or "fake" pricing by fetching live, high-fidelity market data straight from the source.
+*   **Guaranteed Real-Time, Non-Manipulated Data:** Making high-stakes trading decisions based on static or outdated data is a recipe for liquidation.
 *   **Highly Flexible, AI-Driven Tailored Analysis:** Rigid algorithmic platforms lock users into fixed metrics. Leveraging advanced AI reasoning, this agent adapts dynamically to complex natural language requests, performing bespoke technical (RSI, MACD, EMA) and risk analysis on-demand based on your unique criteria.
 *   **Intuitive & High-Clarity Visual Presentation:** Raw financial metrics can be overwhelming and difficult to skim. The agent explicitly formats heavy data into beautifully structured inline Markdown tables, clear procedural lists, and contextual highlights inside your chat canvas, utilizing sharp color-coding (🟩 for Bullish, 🟥 for Bearish) to turn dense metrics into actionable visual intelligence instantly.
 
 ## Key Features
 * **Persistent long-term memory** via Walrus MemWal MCP
-* **Real-time price data** from Coingecko MCP
 * **Deep Onchain Analytics** via custom Antigravity V2 integration
 * **Advanced Technical Indicators** (Minimum 3: RSI, MACD, EMA Cross) calculated on-demand
 * **High-Contrast Interface Color Psychology** (🟩 Bullish / 🟥 Bearish indicators with precise trend arrows)
@@ -26,8 +25,8 @@ Current AI trading assistants suffer from short-term amnesia, unreliable data so
 ## Requirements
 * Claude Desktop or Cursor with MCP support enabled
 * Walrus MemWal MCP account and integration tokens
-* Coingecko MCP tool for real-time market data
 * Internet connection
+* NodeJS
 
 ## Installation & Setup (Step-by-Step)
 
@@ -55,13 +54,6 @@ Open your system's global Claude configuration file and inject the following sta
         "ENV": "prod",
         "NAMESPACE": "walrus-finance-agent"
       }
-    },
-    "coingecko": {
-      "command": "npx",
-      "args": [
-        "mcp-remote",
-        "https://mcp.api.coingecko.com/mcp"
-      ]
     }
   }
 }
